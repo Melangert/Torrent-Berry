@@ -3,6 +3,8 @@
 A lightweight BitTorrent client designed for low-end Linux devices like the Raspberry Pi.
 Simple to install
 
+![Torrent Berry Screenshot](assets/Torrent-Berry.png)
+
 ## Features
 
 - Magnet link and .torrent file support
