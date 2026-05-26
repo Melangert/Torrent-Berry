@@ -74,6 +74,9 @@ def download(session: lt.session, torrent: dict):
             return
 
         current = get_torrent(torrent_id)
+        if current is None:
+            session.remove_torrent(handle)
+            return
         if current["status"] == "paused":
             handle.pause()
             while True:
@@ -102,6 +105,9 @@ def download(session: lt.session, torrent: dict):
             return
 
         current = get_torrent(torrent_id)
+        if current is None:
+            session.remove_torrent(handle)
+            return
         if current["status"] == "paused":
             handle.pause()
             while True:
