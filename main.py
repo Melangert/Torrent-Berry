@@ -1,32 +1,24 @@
+# main.py
+
 print("Starting Torberry...")
 from config import API_HOST, API_PORT
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import threading
-
 from db import init_db
 from downloader import run
 from api.routes import auth, torrents, status
 
-
-# ---------------- LIFESPAN ----------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
-
     thread = threading.Thread(target=run, daemon=True)
     thread.start()
-
     yield
 
+app = FastAPI(title="Torberry", lifespan=lifespan)
 
-# ---------------- APP ----------------
-app = FastAPI(title="Torrent-Berry", lifespan=lifespan)
-
-
-# ---------------- MIDDLEWARE ----------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -35,17 +27,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# ---------------- API ROUTES ----------------
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(torrents.router, prefix="/torrents", tags=["torrents"])
 app.include_router(status.router, prefix="/status", tags=["status"])
-
-
-# ---------------- FRONTEND ----------------
-# THIS is what serves your index.html, app.js, style.css
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
-
 
 if __name__ == "__main__":
     import uvicorn
