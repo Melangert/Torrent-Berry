@@ -3,7 +3,7 @@
 A lightweight BitTorrent client designed for low-end Linux devices like the Raspberry Pi.
 Simple to install
 
-![Torrent Berry Screenshot](assets/Torrent-Berry.png)
+![Torrent Berry --list](Torrent-Berry.png) 
 
 ## Features
 
