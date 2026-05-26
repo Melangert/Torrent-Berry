@@ -46,13 +46,17 @@ def add_file(file: UploadFile = File(...), username: str = Depends(require_auth)
     return {"id": torrent_id}
 
 @router.delete("/{torrent_id}")
-def delete_torrent(torrent_id: int, username: str  = Depends(require_auth)):
+def delete_torrent(torrent_id: int, username: str = Depends(require_auth)):
     torrent = get_torrent(torrent_id)
-    if not torrent: 
+    if not torrent:
         raise HTTPException(status_code=404, detail="Torrent not found")
-    update_torrent(torrent_id, status="done")
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM torrents WHERE id = ?", (torrent_id,))
+    conn.commit()
+    conn.close()
     return {"ok": True}
-
+    
 @router.post("/{torrent_id}/pause")
 def  pause_torrent(torrent_id: int, username: str  = Depends(require_auth)):
     torrent = get_torrent(torrent_id)
@@ -67,17 +71,5 @@ def resume_torrent(torrent_id: int, username: str = Depends(require_auth)):
     if not torrent: 
          raise HTTPException(status_code=404, detail="Torrent not found")                   
     update_torrent(torrent_id, status="queued")
-    return {"ok": True}
-
-@router.delete("/{torrent_id}")
-def delete_torrent(torrent_id: int, username: str = Depends(require_auth)):
-    torrent = get_torrent(torrent_id)
-    if not torrent:
-        raise HTTPException(status_code=404, detail="Torrent not found")
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM torrents WHERE id = ?", (torrent_id,))
-    conn.commit()
-    conn.close()
     return {"ok": True}
 
