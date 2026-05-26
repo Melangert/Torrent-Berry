@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torent-Berry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div id="login-page">
+        <div class="login-box">
+            <h1>🫐 Torrent-Berry</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-error"></p>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div id="main-page" class="hidden">
+        <header>
+            <h1>🫐 Torberry</h1>
+            <div id="system-status">
+                <span id="cpu">CPU: -</span>
+                <span id="ram">RAM: -</span>
+                <span id="disk">Disk: -</span>
+            </div>
+            <button onclick="logout()">Logout</button>
+        </header>
+        <div class="add-torrent">
+            <input type="text" id="magnet-input" placeholder="Paste magnet link...">
+            <button onclick="addMagnet()">Add Magnet</button>
+            <input type="file" id="torrent-file" accept=".torrent">
+            <button onclick="addFile()">Add File</button>
+        </div>
+        <div id="torrent-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

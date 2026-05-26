@@ -1,0 +1,172 @@
+/* frontend/style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0f0f;
+    color: #e0e0e0;
+    font-family: monospace;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Login */
+
+#login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 300px;
+}
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #222;
+}
+
+#system-status {
+    display: flex;
+    gap: 24px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Add torrent */
+
+.add-torrent {
+    display: flex;
+    gap: 8px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #222;
+}
+
+/* Torrent list */
+
+#torrent-list {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.empty {
+    color: #555;
+    text-align: center;
+    margin-top: 48px;
+}
+
+.torrent-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.torrent-card.status-error {
+    border-color: #5a1a1a;
+}
+
+.torrent-card.status-seeding {
+    border-color: #1a3a1a;
+}
+
+.torrent-card.status-done {
+    border-color: #1a2a3a;
+}
+
+.torrent-name {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.torrent-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #2a2a2a;
+    border-radius: 2px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #6a4c9c;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.torrent-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons and inputs */
+
+button {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #3a3a3a;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+button:hover {
+    background: #3a3a3a;
+}
+
+input[type="text"],
+input[type="password"] {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid #2a2a2a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    flex: 1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #6a4c9c;
+}
+
+#login-error {
+    color: #c0392b;
+    font-size: 0.85rem;
+    text-align: center;
+}
