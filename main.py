@@ -9,6 +9,7 @@ import threading
 from db import init_db
 from downloader import run
 from api.routes import auth, torrents, status
+from fastapi.staticfiles import StaticFiles
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -30,6 +31,9 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(torrents.router, prefix="/torrents", tags=["torrents"])
 app.include_router(status.router, prefix="/status", tags=["status"])
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+
 
 if __name__ == "__main__":
     import uvicorn
