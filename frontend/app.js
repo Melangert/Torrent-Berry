@@ -1,6 +1,6 @@
 // frontend/app.js
 
-const API = "http://localhost:8080";
+const API = window.location.origin;
 let token = localStorage.getItem("torberry_token") || null;
 let refreshTimer = null;
 
