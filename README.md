@@ -1,19 +1,18 @@
 # 🫐 Torberry
 
-A lightweight BitTorrent client designed for low-end Linux devices like the Raspberry Pi.
+A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis.
 Simple to install
 
 ![Torrent Berry --list](Torrent-Berry.png) 
 
 ## Features
 
-- Magnet link and .torrent file support
+- basic Magnet link and .torrent file 
 - Web UI accessible from any device on your network
 - JWT authentication
-- Pause and resume downloads
 - System status panel (CPU, RAM, disk)
-- Crash recovery for interrupted downloads
-- Tuned defaults for low RAM and CPU
+- Crash recovery for interrupted downloads 
+- Tuned for Low ram and cpu
 
 ## Requirements
 
