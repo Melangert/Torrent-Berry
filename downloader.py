@@ -1,3 +1,4 @@
+import threading
 import time
 import shutil
 import libtorrent as lt # type: ignore
@@ -132,19 +133,18 @@ def recover_interrupted(session: lt.session):
     conn.close()
     print("Recovered interrupted downloads")
 
-
 def run():
     session = make_session()
     recover_interrupted(session)
-    print("Swarmberry downloader started")
+    print("Torberry downloader started")
 
     while True:
         torrent = get_next_queued()
         if torrent:
             try:
-                download(session, torrent)
+                t = threading.Thread(target=download, args=(session, torrent), daemon=True)
+                t.start()
             except Exception as e:
-                print(f"Error downloading torrent {torrent['id']}: {e}")
+                print(f"Error: {e}")
                 update_torrent(torrent["id"], status="error", error=str(e))
-        else:
-            time.sleep(POLL_INTERVAL)
+        time.sleep(POLL_INTERVAL)
