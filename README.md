@@ -30,14 +30,6 @@ sed -i 's/\r$//' install.sh
 ./install.sh
 ```
 
-### Manual install
-```bash
-git clone https://github.com/Melangert/Torrent-Berry
-cd Torrent-Berry
-pip install -r requirements.txt
-python main.py
-```
-
 Then open `http://localhost:8080` in your browser.
 
 ## Configuration
