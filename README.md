@@ -1,4 +1,4 @@
-# 🫐 Torberry
+# 🫐 Torrent-berry
 
 A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis.
 Simple to install
