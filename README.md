@@ -9,16 +9,15 @@ Simple to install
 
 - basic Magnet link and .torrent file 
 - Web UI accessible from any device on your network
-- JWT authentication
-- System status panel (CPU, RAM, disk)
+- system status panel (CPU, RAM, disk)
 - Crash recovery for interrupted downloads 
-- Tuned for Low ram and cpu
+- Tuning for Low ram and cpu
 
 ## Requirements
 
 - Linux (ARM or x86)
 - Python 3.11+
-- 512MB RAM minimum, 1GB recommended
+- 512MB RAM minimum, 1GB++ recommended
 
 ## Install
 
@@ -31,7 +30,7 @@ sed -i 's/\r$//' install.sh
 ./install.sh
 ```
 
-Then open `http://localhost:8080` in your browser.
+Then open `http://your-ip:8080` in your browser.
 
 ## Configuration
 
