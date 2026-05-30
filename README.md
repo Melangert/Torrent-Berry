@@ -58,7 +58,6 @@ All config is done with environment variables:
 
 ## File locations
 
-
 Downloaded files go to `~/torberry/downloads` defaultly.  you can change this with the `TORBERRY_BASE_DIR` env var.
 
 
@@ -66,4 +65,6 @@ Downloaded files go to `~/torberry/downloads` defaultly.  you can change this wi
 
 MIT
 
-code not read me made with help from claude
+## Credits
+code made with help from AI
+Read me written by me
