@@ -8,9 +8,13 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 ## Features
 
 -Basic torrenting stuff like magnet links and torrent files
+
 -Web ui accessible from any device over your network or host device if it has a browser
+
 -sytem stats panel
+
 -Download crash recovery
+
 -made specifically for low end devices
 
 
