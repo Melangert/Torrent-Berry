@@ -7,17 +7,20 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 
 ## Features
 
-- basic Magnet link and .torrent file 
-- Web UI accessible from any device on your network
-- system status panel
-- Crash recovery for interrupted downloads 
-- made for low ram and cpu devices
+-Basic torrenting stuff like magnet links and torrent files
+-Web ui accessible from any device over your network or host device if it has a browser
+-sytem stats panel
+-Download crash recovery
+-made specifically for low end devices
+
+
+
 
 ## Requirements
 
 - any linux distro: (ARM or x86)
 - Python 3.11+
-- 512MB RAM minimum (not reccomended as i havent tested that), 1GB++ recommended
+- 512MB RAM minimum (not reccomended as i havent tested that), 1GB+ recommended
 
 ## Install
 
