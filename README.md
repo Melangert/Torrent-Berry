@@ -13,7 +13,7 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 -Download crash recovery
 -made specifically for low end devices
 
-(i wrote the read me myself this time)
+
 
 
 ## Requirements
