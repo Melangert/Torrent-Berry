@@ -1,7 +1,7 @@
 # 🫐 Torrent-berry
 
-A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis.
-Simple to install
+A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis, I wanted to make something like qbittorrent since im trying to make apps to run on my pi cluster
+
 
 ![Torrent Berry --list](Torrent-Berry.png) 
 
@@ -9,19 +9,18 @@ Simple to install
 
 - basic Magnet link and .torrent file 
 - Web UI accessible from any device on your network
-- system status panel (CPU, RAM, disk)
+- system status panel
 - Crash recovery for interrupted downloads 
-- Tuning for Low ram and cpu
+- made for low ram and cpu devices
 
 ## Requirements
 
 - Linux (ARM or x86)
 - Python 3.11+
-- 512MB RAM minimum, 1GB++ recommended
+- 512MB RAM minimum (not reccomended as i havent tested that), 1GB++ recommended
 
 ## Install
 
-### Quick install
 ```bash
 git clone https://github.com/Melangert/Torrent-Berry
 cd Torrent-Berry
@@ -30,7 +29,7 @@ sed -i 's/\r$//' install.sh
 ./install.sh
 ```
 
-Then open `http://your-ip:8080` in your browser.
+Then open `http://your-ip:8080` in your browser or just click the link provided when it starts.
 
 ## Configuration
 
@@ -41,7 +40,7 @@ All configuration is done via environment variables:
 | TORBERRY_BASE_DIR | ~/torberry | Base directory for all data |
 | TORBERRY_HOST | 0.0.0.0 | API host |
 | TORBERRY_PORT | 8080 | API port |
-| TORBERRY_SECRET_KEY | changeme | JWT signing key — **must be changed in production** |
+| TORBERRY_SECRET_KEY | changeme | JWT signing key — **should be changed** |
 | TORBERRY_USERNAME | admin | Login username |
 | TORBERRY_PASSWORD | admin | Login password |
 | TORBERRY_DL_LIMIT | 0 | Download limit in bytes/s (0 = unlimited) |
@@ -49,12 +48,12 @@ All configuration is done via environment variables:
 | TORBERRY_MAX_CONNECTIONS | 50 | Max peer connections |
 | TORBERRY_LISTEN_PORT | 6881 | BitTorrent listen port |
 
+
 ## File locations
 
-Downloaded files go to `~/torberry/downloads` by default. Change this with the `TORBERRY_BASE_DIR` env var.
 
+Downloaded files go to `~/torberry/downloads` defaultly.  you can change this with the `TORBERRY_BASE_DIR` env var.
 
-Written with help from Claude
 
 ## License
 
