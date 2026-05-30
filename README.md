@@ -15,7 +15,7 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 
 ## Requirements
 
-- Linux (ARM or x86)
+- any linux distro: (ARM or x86)
 - Python 3.11+
 - 512MB RAM minimum (not reccomended as i havent tested that), 1GB++ recommended
 
@@ -33,7 +33,7 @@ Then open `http://your-ip:8080` in your browser or just click the link provided 
 
 ## Configuration
 
-All configuration is done via environment variables:
+All config is done with environment variables:
 
 | Variable | Default | Description |
 |---|---|---|
