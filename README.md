@@ -66,5 +66,5 @@ Downloaded files go to `~/torberry/downloads` defaultly.  you can change this wi
 MIT
 
 ## Credits
-code made with help from AI
+About 80% of the code was by me i used AI to write some parts and debug
 Read me written by me
