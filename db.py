@@ -1,4 +1,3 @@
-## backend/db.py
 
 from multiprocessing import connection
 import sqlite3
