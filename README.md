@@ -13,7 +13,7 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 -Download crash recovery
 -made specifically for low end devices
 
-
+(i wrote the read me myself this time)
 
 
 ## Requirements
@@ -40,12 +40,12 @@ All config is done with environment variables:
 
 | Variable | Default | Description |
 |---|---|---|
-| TORBERRY_BASE_DIR | ~/torberry | Base directory for all data |
+| TORBERRY_BASE_DIR | ~/torberry | Base directory for data |
 | TORBERRY_HOST | 0.0.0.0 | API host |
 | TORBERRY_PORT | 8080 | API port |
 | TORBERRY_SECRET_KEY | changeme | JWT signing key — **should be changed** |
-| TORBERRY_USERNAME | admin | Login username |
-| TORBERRY_PASSWORD | admin | Login password |
+| TORBERRY_USERNAME | admin | default Login username |
+| TORBERRY_PASSWORD | admin |  default Login password |
 | TORBERRY_DL_LIMIT | 0 | Download limit in bytes/s (0 = unlimited) |
 | TORBERRY_UL_LIMIT | 0 | Upload limit in bytes/s (0 = unlimited) |
 | TORBERRY_MAX_CONNECTIONS | 50 | Max peer connections |
