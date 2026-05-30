@@ -30,7 +30,7 @@ A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis,
 
 ```bash
 git clone https://github.com/Melangert/Torrent-Berry
-cd Torrent-Berry
+cd ~/Torrent-Berry
 chmod +x install.sh
 sed -i 's/\r$//' install.sh
 ./install.sh
