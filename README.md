@@ -66,5 +66,5 @@ All config is done with environment variables:
 MIT
 
 ## Credits
-About 80% of the code was by me i used AI to write some parts and debug
+About 80% of the code was by me i used AI to write most of the frontend and debug
 Read me written by me
