@@ -44,7 +44,7 @@ All config is done with environment variables:
 
 | Variable | Default | Description |
 |---|---|---|
-| TORBERRY_BASE_DIR | ~/torberry | Base directory for data |
+| TORBERRY_BASE_DIR | ~/torberry | Base directory for  all  data |
 | TORBERRY_HOST | 0.0.0.0 | API host |
 | TORBERRY_PORT | 8080 | API port |
 | TORBERRY_SECRET_KEY | changeme | JWT signing key — **should be changed** |
@@ -58,7 +58,7 @@ All config is done with environment variables:
 
 ## File locations
 
-Downloaded files go to `~/torberry/downloads` defaultly.  you can change this with the `TORBERRY_BASE_DIR` env var.
+ all downloaded files go to `~/torberry/downloads` defaultly unless changed with the `TORBERRY_BASE_DIR` env var.
 
 
 ## License
