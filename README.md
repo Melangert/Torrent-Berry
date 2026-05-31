@@ -68,5 +68,4 @@ All config is done with environment variables:
 MIT
 
 ## Credits
-About 80% of the code was by me i used AI to write most of the frontend and debug
-Read me written by me
+I used Ai as a tool to speed up frontend development and debug backend errors that caused it to crash repeatedly
