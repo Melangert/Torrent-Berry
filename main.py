@@ -1,4 +1,3 @@
-# main.py
 
 print("Starting Torberry...")
 from config import API_HOST, API_PORT
