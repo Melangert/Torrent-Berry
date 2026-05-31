@@ -1,6 +1,6 @@
 # 🫐 Torrent-berry
 
-A light BitTorrent client designed for lowend Linux devices like  Raspberry Pis, 
+A light BitTorrent client made for lowend Linux devices like  Raspberry Pis, 
 
 I wanted to make something like qbittorrent since im trying to make apps to run on my pi cluster
 
