@@ -26,7 +26,7 @@ I wanted to make something like qbittorrent since im trying to make apps to run 
 
 - any linux distro: (ARM or x86)
 - Python 3.11+
-- 512MB RAM minimum (not reccomended as i havent tested that), 1GB+ recommended
+- 512MB RAM minimum (not ideal as i havent tested that), 1GB+ recommended
 
 ## Install
 
