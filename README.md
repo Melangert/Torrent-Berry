@@ -43,7 +43,7 @@ sed -i 's/\r$//' install.sh
   tar -xzf Torrent-Berry.tar.gz
   chmod +x ./launch.sh
   ./launch.sh
-
+```
 
 ## How to run
 ```bash
