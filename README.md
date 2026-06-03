@@ -37,6 +37,13 @@ chmod +x install.sh
 sed -i 's/\r$//' install.sh
 ./install.sh
 ```
+ or with tar file from release
+ cd into install directory
+ ```bash
+  tar -xzf Torrent-Berry.tar.gz
+  chmod +x ./launch.sh
+  ./launch.sh
+
 
 ## How to run
 ```bash
