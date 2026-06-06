@@ -51,13 +51,13 @@ source venv/bin/activate
   python main.py
 then
  http://<your-device-ip>:8000
-
+```
 Then open `http://your-ip:8080` in your browser or just click the link provided when it starts.
 
 ## Configuration
 
 All config is done with environment variables:
-
+```
 | Variable | Default | Description |
 |---|---|---|
 | TORBERRY_BASE_DIR | ~/torberry | Base directory for  all  data |
@@ -70,11 +70,11 @@ All config is done with environment variables:
 | TORBERRY_UL_LIMIT | 0 | Upload limit in bytes/s (0 = unlimited) |
 | TORBERRY_MAX_CONNECTIONS | 50 | Max peer connections |
 | TORBERRY_LISTEN_PORT | 6881 | BitTorrent listen port |
-
+```
 
 ## File locations
 
- all downloaded files go to `~/torberry/downloads` defaultly unless changed with the `TORBERRY_BASE_DIR` env var.
+all downloaded files go to `~/torberry/downloads` defaultly unless changed with the `TORBERRY_BASE_DIR` env var.
 
 
 ## License
