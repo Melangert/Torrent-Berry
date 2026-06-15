@@ -15,7 +15,7 @@ INCOMPLETE_DIR.mkdir(parents=True, exist_ok=True)
 
 # -- API --
 API_HOST = os.getenv("TORBERRY_HOST", "0.0.0.0")
-API_PORT = int(os.getenv("TORBERRY_PORT", "8080"))
+API_PORT = int(os.getenv("TORBERRY_PORT", "8000"))
 SECRET_KEY = os.getenv("TORBERRY_SECRET_KEY", "changeme")
 TOKEN_EXPIRE_HOURS = int(os.getenv("TORBERRY_TOKEN_EXPIRE_HOURS", "24"))
 
