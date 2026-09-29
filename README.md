@@ -46,13 +46,17 @@ sed -i 's/\r$//' install.sh
 ```
 
 ## How to run
-```bash
+```
 source venv/bin/activate
   python main.py
+```
+
 then
+
+```
  http://<your-device-ip>:8000
 ```
-Then open `http://your-ip:8080` in your browser or just click the link provided when it starts.
+Open `http://your-ip:8080` in your browser or just click the link provided when it starts.
 
 ## Configuration
 
