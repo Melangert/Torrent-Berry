@@ -15,7 +15,6 @@ SEED_RATIO_LIMIT = 2.0
 
 def make_session() -> lt.session:
     session = lt.session()
-    session.listen_on(LT_LISTEN_PORT, LT_LISTEN_PORT + 10)
     settings = {
         "active_downloads": 1,
         "active_seeds": 4,
@@ -23,6 +22,7 @@ def make_session() -> lt.session:
         "connections_limit": LT_MAX_CONNECTIONS,
         "upload_rate_limit": LT_UPLOAD_LIMIT,
         "download_rate_limit": LT_DOWNLOAD_LIMIT,
+        "listen_interfaces": f"0.0.0.0:{LT_LISTEN_PORT}",
     }
     session.apply_settings(settings)
     return session

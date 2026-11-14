@@ -1,172 +1,97 @@
-/* frontend/style.css */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #121212;
+    --panel: #1b1b1b;
+    --panel-raised: #242424;
+    --line: #383838;
+    --text: #eeeeee;
+    --muted: #999999;
+    --blue: #79b8e8;
+    --blue-strong: #3d82b8;
+    --green: #83c995;
+    --orange: #e0ad72;
+    --red: #df8181;
+    --sans: Arial, Helvetica, sans-serif;
+    --mono: "Courier New", monospace;
 }
 
-body {
-    background: #0f0f0f;
-    color: #e0e0e0;
-    font-family: monospace;
-}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: var(--sans); }
+button, input { font: inherit; }
+button, .file-picker { cursor: pointer; }
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.muted, .section-title p { color: var(--muted); margin: 5px 0 0; font-size: .85rem; }
 
-.hidden {
-    display: none;
-}
+.login-page { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.login-panel { width: min(100%, 360px); background: var(--panel); border: 1px solid var(--line); padding: 32px; }
+.brand-mark { width: 40px; height: 40px; display: grid; place-items: center; background: var(--blue-strong); color: white; font: bold .8rem var(--mono); margin-bottom: 24px; }
+.login-panel h1 { font-size: 1.7rem; margin: 0; }
+.login-copy { color: var(--muted); line-height: 1.5; margin: 8px 0 25px; }
+.login-panel form { display: grid; gap: 8px; }
+.login-panel label { color: #c4c4c4; font-size: .8rem; margin-top: 7px; }
+.login-panel input, .magnet-form input { width: 100%; background: #101010; color: var(--text); border: 1px solid var(--line); border-radius: 3px; padding: 11px 12px; outline: none; }
+input:focus { border-color: var(--blue); }
 
-/* Login */
+.topbar { height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(20px, calc((100% - 1120px) / 2)); border-bottom: 1px solid var(--line); background: #171717; }
+.brand { color: var(--text); text-decoration: none; font-size: 1rem; font-weight: bold; }
+.topbar-actions, .connection-status { display: flex; align-items: center; gap: 14px; }
+.connection-status { color: var(--muted); font: .7rem var(--mono); }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.content { width: min(100% - 40px, 1120px); margin: 0 auto; padding: 42px 0 64px; }
+.page-heading, .library-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.page-heading h1 { font-size: 2rem; margin: 0; }
+.system-status { display: flex; gap: 8px; }
+.system-stat { min-width: 95px; padding: 10px 12px; border: 1px solid var(--line); background: var(--panel); }
+.stat-label { display: block; color: var(--muted); font: .62rem var(--mono); margin-bottom: 5px; }
+.system-stat strong { font: .82rem var(--mono); }
+.add-panel { margin-top: 32px; background: var(--panel); border: 1px solid var(--line); padding: 20px; }
+.section-title h2 { font-size: 1rem; margin: 0; }
+.add-controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+.magnet-form { display: flex; flex: 1; gap: 8px; }
+.divider { color: var(--muted); font-size: .75rem; padding: 0 2px; }
+.button { border: 1px solid var(--line); border-radius: 3px; padding: 9px 13px; color: var(--text); font-size: .8rem; white-space: nowrap; }
+.button-primary { background: var(--blue-strong); border-color: var(--blue-strong); }
+.button-primary:hover { background: #4b91c5; }
+.button-secondary, .button-ghost { background: transparent; }
+.button-secondary:hover, .button-ghost:hover { background: var(--panel-raised); }
+.button-wide { width: 100%; margin-top: 14px; }
+.form-error { color: var(--red); font-size: .78rem; min-height: 16px; margin: 9px 0 0; }
+.library-section { margin-top: 40px; }
+.library-heading { align-items: center; }
+.torrent-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 10px; margin-top: 16px; }
+.torrent-card { background: var(--panel); border: 1px solid var(--line); padding: 16px; min-width: 0; }
+.torrent-card.status-error { border-left: 3px solid var(--red); }
+.torrent-card.status-done, .torrent-card.status-seeding { border-left: 3px solid var(--green); }
+.torrent-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.torrent-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .92rem; }
+.torrent-status { border-radius: 2px; padding: 4px 6px; font: .62rem var(--mono); text-transform: uppercase; }
+.status-downloading, .status-queued { color: var(--blue); background: #203342; }
+.status-seeding, .status-done { color: var(--green); background: #213629; }
+.status-paused { color: var(--orange); background: #3b3022; }
+.status-error { color: var(--red); background: #3a2424; }
+.torrent-meta { display: flex; flex-wrap: wrap; gap: 10px 16px; color: var(--muted); font: .7rem var(--mono); margin: 18px 0 10px; }
+.progress-track { height: 5px; background: #343434; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--blue-strong); transition: width .5s ease; }
+.torrent-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+.progress-label { color: var(--muted); font: .7rem var(--mono); }
+.torrent-actions { display: flex; gap: 6px; }
+.action-button { padding: 5px 8px; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 3px; font-size: .7rem; }
+.action-button:hover { color: var(--text); background: var(--panel-raised); }
+.empty { grid-column: 1 / -1; text-align: center; padding: 48px 20px; border: 1px dashed var(--line); color: var(--muted); }
+.empty strong { display: block; color: var(--text); font-size: .95rem; margin-bottom: 6px; }
+.toast { position: fixed; right: 20px; bottom: 20px; background: var(--panel-raised); border: 1px solid var(--line); padding: 10px 13px; color: var(--text); font-size: .8rem; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.toast.visible { opacity: 1; }
 
-#login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.login-box {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 300px;
-}
-
-.login-box h1 {
-    text-align: center;
-    margin-bottom: 8px;
-}
-
-/* Header */
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 24px;
-    border-bottom: 1px solid #222;
-}
-
-#system-status {
-    display: flex;
-    gap: 24px;
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* Add torrent */
-
-.add-torrent {
-    display: flex;
-    gap: 8px;
-    padding: 16px 24px;
-    border-bottom: 1px solid #222;
-}
-
-/* Torrent list */
-
-#torrent-list {
-    padding: 16px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.empty {
-    color: #555;
-    text-align: center;
-    margin-top: 48px;
-}
-
-.torrent-card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 6px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.torrent-card.status-error {
-    border-color: #5a1a1a;
-}
-
-.torrent-card.status-seeding {
-    border-color: #1a3a1a;
-}
-
-.torrent-card.status-done {
-    border-color: #1a2a3a;
-}
-
-.torrent-name {
-    font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.torrent-meta {
-    display: flex;
-    gap: 16px;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.progress-bar {
-    height: 4px;
-    background: #2a2a2a;
-    border-radius: 2px;
-}
-
-.progress-fill {
-    height: 100%;
-    background: #6a4c9c;
-    border-radius: 2px;
-    transition: width 0.5s ease;
-}
-
-.torrent-actions {
-    display: flex;
-    gap: 8px;
-}
-
-/* Buttons and inputs */
-
-button {
-    background: #2a2a2a;
-    color: #e0e0e0;
-    border: 1px solid #3a3a3a;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: monospace;
-}
-
-button:hover {
-    background: #3a3a3a;
-}
-
-input[type="text"],
-input[type="password"] {
-    background: #1a1a1a;
-    color: #e0e0e0;
-    border: 1px solid #2a2a2a;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-family: monospace;
-    flex: 1;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-    outline: none;
-    border-color: #6a4c9c;
-}
-
-#login-error {
-    color: #c0392b;
-    font-size: 0.85rem;
-    text-align: center;
+@media (max-width: 700px) {
+    .login-panel { padding: 26px 22px; }
+    .topbar { padding: 0 16px; }
+    .content { width: min(100% - 28px, 1120px); padding-top: 28px; }
+    .page-heading, .library-heading { align-items: flex-start; flex-direction: column; }
+    .system-status { width: 100%; }
+    .system-stat { flex: 1; min-width: 0; }
+    .add-controls, .magnet-form { align-items: stretch; flex-direction: column; }
+    .divider { text-align: center; }
+    .file-picker { text-align: center; }
+    .torrent-list { grid-template-columns: 1fr; }
+    .connection-status { display: none; }
 }
